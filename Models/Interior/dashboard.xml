@@ -1,0 +1,439 @@
+
+<PropertyList>
+
+ <path>dashboard.ac</path>
+ 
+ <model>
+  <name>displays</name>
+  <path>Aircraft/KI2000/Models/Interior/binnacles.xml</path>
+ </model>
+ 
+ <animation>
+  <type>select</type>
+  <object-name>displays</object-name>
+  <condition>
+   <greater-than>
+    <property>/systems/electrical/outputs/low-voltage/binnacles</property>
+    <value>10</value>
+   </greater-than>
+  </condition>
+ </animation>
+ 
+ <animation>
+  <type>select</type>
+  <object-name>indicator.power</object-name>
+  <condition>
+   <greater-than>
+    <property>/instrumentation/indicators/power/brightness</property>
+    <value>0.05</value>
+   </greater-than>
+  </condition>
+ </animation>
+ 
+ <animation>
+  <type>select</type>
+  <object-name>indicator.power.off</object-name>
+  <condition>
+   <less-than>
+    <property>/instrumentation/indicators/power/brightness</property>
+    <value>0.05</value>
+   </less-than>
+  </condition>
+ </animation>
+ 
+ <animation>
+  <type>select</type>
+  <object-name>indicator.fuelon</object-name>
+  <condition>
+   <greater-than>
+    <property>/instrumentation/indicators/fuel-on/brightness</property>
+    <value>0.05</value>
+   </greater-than>
+  </condition>
+ </animation>
+ 
+ <animation>
+  <type>select</type>
+  <object-name>indicator.fuelon.off</object-name>
+  <condition>
+   <less-than>
+    <property>/instrumentation/indicators/fuel-on/brightness</property>
+    <value>0.05</value>
+   </less-than>
+  </condition>
+ </animation>
+ 
+ <animation>
+  <type>select</type>
+  <object-name>indicator.minrpm</object-name>
+  <condition>
+   <greater-than>
+    <property>/instrumentation/indicators/min-rpm/brightness</property>
+    <value>0.05</value>
+   </greater-than>
+  </condition>
+ </animation>
+ 
+ <animation>
+  <type>select</type>
+  <object-name>indicator.minrpm.off</object-name>
+  <condition>
+   <less-than>
+    <property>/instrumentation/indicators/min-rpm/brightness</property>
+    <value>0.05</value>
+   </less-than>
+  </condition>
+ </animation>
+ 
+ <animation>
+  <type>select</type>
+  <object-name>indicator.ignitors</object-name>
+  <condition>
+   <greater-than>
+    <property>/instrumentation/indicators/ignitors/brightness</property>
+    <value>0.05</value>
+   </greater-than>
+  </condition>
+ </animation>
+ 
+ <animation>
+  <type>select</type>
+  <object-name>indicator.ignitors.off</object-name>
+  <condition>
+   <less-than>
+    <property>/instrumentation/indicators/ignitors/brightness</property>
+    <value>0.05</value>
+   </less-than>
+  </condition>
+ </animation>
+ 
+ <animation>
+  <type>select</type>
+  <object-name>indicator.normalcruise</object-name>
+  <condition>
+   <greater-than>
+    <property>/instrumentation/indicators/normal-cruise/brightness</property>
+    <value>0.05</value>
+   </greater-than>
+  </condition>
+ </animation>
+ 
+ <animation>
+  <type>select</type>
+  <object-name>indicator.normalcruise.off</object-name>
+  <condition>
+   <less-than>
+    <property>/instrumentation/indicators/normal-cruise/brightness</property>
+    <value>0.05</value>
+   </less-than>
+  </condition>
+ </animation>
+ 
+ <animation>
+  <type>select</type>
+  <object-name>indicator.autocruise</object-name>
+  <condition>
+   <greater-than>
+    <property>/instrumentation/indicators/auto-cruise/brightness</property>
+    <value>0.05</value>
+   </greater-than>
+  </condition>
+ </animation>
+ 
+ <animation>
+  <type>select</type>
+  <object-name>indicator.autocruise.off</object-name>
+  <condition>
+   <less-than>
+    <property>/instrumentation/indicators/auto-cruise/brightness</property>
+    <value>0.05</value>
+   </less-than>
+  </condition>
+ </animation>
+
+ <animation>
+  <type>select</type>
+  <object-name>indicator.pursuit</object-name>
+  <condition>
+   <greater-than>
+    <property>/instrumentation/indicators/pursuit/brightness</property>
+    <value>0.05</value>
+   </greater-than>
+  </condition>
+ </animation>
+ 
+ <animation>
+  <type>select</type>
+  <object-name>indicator.pursuit.off</object-name>
+  <condition>
+   <less-than>
+    <property>/instrumentation/indicators/pursuit/brightness</property>
+    <value>0.05</value>
+   </less-than>
+  </condition>
+ </animation>
+ 
+ <animation>
+  <type>select</type>
+  <object-name>indicator.turnleft</object-name>
+  <condition>
+   <greater-than>
+    <property>/instrumentation/indicators/turn-left/brightness</property>
+    <value>0.05</value>
+   </greater-than>
+  </condition>
+ </animation>
+ 
+ <animation>
+  <type>select</type>
+  <object-name>indicator.turnleft.off</object-name>
+  <condition>
+   <less-than>
+    <property>/instrumentation/indicators/turn-left/brightness</property>
+    <value>0.05</value>
+   </less-than>
+  </condition>
+ </animation>
+ 
+ <animation>
+  <type>select</type>
+  <object-name>indicator.turnright</object-name>
+  <condition>
+   <greater-than>
+    <property>/instrumentation/indicators/turn-right/brightness</property>
+    <value>0.05</value>
+   </greater-than>
+  </condition>
+ </animation>
+ 
+ <animation>
+  <type>select</type>
+  <object-name>indicator.turnright.off</object-name>
+  <condition>
+   <less-than>
+    <property>/instrumentation/indicators/turn-right/brightness</property>
+    <value>0.05</value>
+   </less-than>
+  </condition>
+ </animation>
+ 
+ <animation>
+  <type>select</type>
+  <object-name>indicator.beam</object-name>
+  <condition>
+   <greater-than>
+    <property>/instrumentation/indicators/turn-right/brightness</property>
+    <value>0.05</value>
+   </greater-than>
+  </condition>
+ </animation>
+ 
+ <animation>
+  <type>select</type>
+  <object-name>indicator.beam.off</object-name>
+  <condition>
+   <less-than>
+    <property>/instrumentation/indicators/turn-right/brightness</property>
+    <value>0.05</value>
+   </less-than>
+  </condition>
+ </animation>
+ 
+ <animation>
+  <type>select</type>
+  <object-name>indicator.lights</object-name>
+  <condition>
+   <greater-than>
+    <property>/instrumentation/indicators/turn-right/brightness</property>
+    <value>0.05</value>
+   </greater-than>
+  </condition>
+ </animation>
+ 
+ <animation>
+  <type>select</type>
+  <object-name>indicator.lights.off</object-name>
+  <condition>
+   <less-than>
+    <property>/instrumentation/indicators/turn-right/brightness</property>
+    <value>0.05</value>
+   </less-than>
+  </condition>
+ </animation>
+ 
+ <animation>
+  <type>pick</type>
+  <object-name>litbutton.12v</object-name>
+  <action>
+   <button>0</button>
+   <binding>
+    <command>nasal</command>
+    <script>instruments.litbutton("12v");</script>    
+   </binding>
+  </action>
+ </animation>
+ 
+ <effect>
+  <inherits-from>Effects/model-transparent</inherits-from>
+  <object-name>litbutton.12v</object-name>
+  <object-name>litbutton.run</object-name>
+  <object-name>litbutton.norm</object-name>
+  <object-name>litbutton.auto</object-name>
+ </effect>
+ 
+ 
+ <animation>
+  <type>material</type>
+  <object-name>indicator.turnleft</object-name>
+  <object-name>indicator.turnright</object-name>
+  <object-name>indicator.beam</object-name>
+  <object-name>indicator.lights</object-name>
+  <emission>
+   <red>1.0</red>
+   <green>1.0</green>
+   <blue>1.0</blue>
+   <factor-prop>/instrumentation/illumination/indicators</factor-prop>
+  </emission>
+ </animation>
+ 
+ <animation>
+  <type>material</type>
+  <object-name>indicator.power</object-name>
+  <emission>
+   <red>1.0</red>
+   <green>1.0</green>
+   <blue>1.0</blue>
+   <factor-prop>/instrumentation/indicators/power/brightness</factor-prop>
+  </emission>
+ </animation>
+
+ <animation>
+  <type>material</type>
+  <object-name>indicator.fuelon</object-name>
+  <emission>
+   <red>1.0</red>
+   <green>1.0</green>
+   <blue>1.0</blue>
+   <factor-prop>/instrumentation/indicators/fuel-on/brightness</factor-prop>
+  </emission>
+ </animation>
+ 
+ <animation>
+  <type>material</type>
+  <object-name>indicator.minrpm</object-name>
+  <emission>
+   <red>1.0</red>
+   <green>1.0</green>
+   <blue>1.0</blue>
+   <factor-prop>/instrumentation/indicators/min-rpm/brightness</factor-prop>
+  </emission>
+ </animation>
+ 
+ <animation>
+  <type>material</type>
+  <object-name>indicator.ignitors</object-name>
+  <emission>
+   <red>1.0</red>
+   <green>1.0</green>
+   <blue>1.0</blue>
+   <factor-prop>/instrumentation/indicators/ignitors/brightness</factor-prop>
+  </emission>
+ </animation>
+ 
+ <animation>
+  <type>material</type>
+  <object-name>indicator.normalcruise</object-name>
+  <emission>
+   <red>1.0</red>
+   <green>1.0</green>
+   <blue>1.0</blue>
+   <factor-prop>/instrumentation/indicators/normal-cruise/brightness</factor-prop>
+  </emission>
+ </animation>
+ 
+ <animation>
+  <type>material</type>
+  <object-name>indicator.autocruise</object-name>
+  <emission>
+   <red>1.0</red>
+   <green>1.0</green>
+   <blue>1.0</blue>
+   <factor-prop>/instrumentation/indicators/auto-cruise/brightness</factor-prop>
+  </emission>
+ </animation>
+ 
+ <animation>
+  <type>material</type>
+  <object-name>indicator.pursuit</object-name>
+  <emission>
+   <red>1.0</red>
+   <green>1.0</green>
+   <blue>1.0</blue>
+   <factor-prop>/instrumentation/indicators/pursuit/brightness</factor-prop>
+  </emission>
+ </animation>
+ 
+ <animation>
+  <type>material</type>
+  <object-name>indicator.turnleft</object-name>
+  <emission>
+   <red>1.0</red>
+   <green>1.0</green>
+   <blue>1.0</blue>
+   <factor-prop>/instrumentation/indicators/turn-left/brightness</factor-prop>
+  </emission>
+ </animation>
+ 
+ <animation>
+  <type>material</type>
+  <object-name>indicator.beam</object-name>
+  <emission>
+   <red>1.0</red>
+   <green>1.0</green>
+   <blue>1.0</blue>
+   <factor-prop>/instrumentation/indicators/beam/brightness</factor-prop>
+  </emission>
+ </animation>
+ 
+ <animation>
+  <type>material</type>
+  <object-name>indicator.lights</object-name>
+  <emission>
+   <red>1.0</red>
+   <green>1.0</green>
+   <blue>1.0</blue>
+   <factor-prop>/instrumentation/indicators/lights/brightness</factor-prop>
+  </emission>
+ </animation>
+ 
+ <animation>
+  <type>material</type>
+  <object-name>indicator.turnright</object-name>
+  <emission>
+   <red>1.0</red>
+   <green>1.0</green>
+   <blue>1.0</blue>
+   <factor-prop>/instrumentation/indicators/turn-right/brightness</factor-prop>
+  </emission>
+ </animation>
+ 
+ <animation>
+  <object-name>steering.wheel</object-name>
+  <object-name>wheelbadge</object-name>
+  <type>rotate</type>
+  <property>surface-positions/rudder-pos-norm</property>
+  <factor>-250</factor>
+  <offset-deg>0</offset-deg>
+  <center>
+   <x-m>2.4663</x-m>
+   <y-m>-0.3883</y-m>
+   <z-m>0.7820</z-m>
+  </center>
+  <axis>
+   <x>1</x>
+   <y>0</y>
+   <z>0</z>
+  </axis>
+ </animation>
+ 
+</PropertyList>

@@ -1,0 +1,73 @@
+
+<PropertyList>
+
+ <path>anamorphic-eq.ac</path>
+ 
+ <animation>
+  <type>material</type>
+  <object-name>element1.lit</object-name>
+  <emission>
+   <red>1</red>
+   <green>1</green>
+   <blue>1</blue>
+   <factor-prop>/systems/anamorphic-eq/elements/element[0]</factor-prop>
+  </emission>
+ </animation>
+ 
+ <animation>
+  <type>material</type>
+  <object-name>element2.lit</object-name>
+  <emission>
+   <red>1</red>
+   <green>1</green>
+   <blue>1</blue>
+   <factor-prop>/systems/anamorphic-eq/elements/element[1]</factor-prop>
+  </emission>
+ </animation>
+ 
+  <animation>
+  <type>material</type>
+  <object-name>element3.lit</object-name>
+  <emission>
+   <red>1</red>
+   <green>1</green>
+   <blue>1</blue>
+   <factor-prop>/systems/anamorphic-eq/elements/element[2]</factor-prop>
+  </emission>
+ </animation>
+ 
+ <animation>
+  <type>material</type>
+  <object-name>element4.lit</object-name>
+  <emission>
+   <red>1</red>
+   <green>1</green>
+   <blue>1</blue>
+   <factor-prop>/systems/anamorphic-eq/elements/element[3]</factor-prop>
+  </emission>
+ </animation>
+ 
+ <animation>
+  <type>material</type>
+  <object-name>element5.lit</object-name>
+  <emission>
+   <red>1</red>
+   <green>1</green>
+   <blue>1</blue>
+   <factor-prop>/systems/anamorphic-eq/elements/element[4]</factor-prop>
+  </emission>
+ </animation>
+ 
+ <animation>
+  <type>material</type>
+  <object-name>element6.lit</object-name>
+  <emission>
+   <red>1</red>
+   <green>1</green>
+   <blue>1</blue>
+   <factor-prop>/systems/anamorphic-eq/elements/element[5]</factor-prop>
+  </emission>
+ </animation>
+
+
+</PropertyList>

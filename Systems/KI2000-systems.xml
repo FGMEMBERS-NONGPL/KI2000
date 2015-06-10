@@ -1,0 +1,42 @@
+
+<PropertyList>
+
+ <electrical>
+  <circuit-breakers>
+   <transformer type="bool">true</transformer>
+   <turbine-alternator type="bool">true</turbine-alternator>
+   <battery type="bool">true</battery>
+  </circuit-breakers>
+  <relays>
+   <binnacles type="bool">false</binnacles>
+   <indicators type="bool">false</indicators>
+   <lit-buttons type="bool">false</lit-buttons>
+  </relays>
+ </electrical>
+ 
+ <transmission>
+  <gear type="int">1</gear>
+  <gear-ratio type="double">1</gear-ratio>
+  <power-demand type="double">0</power-demand>
+  <config>
+   <power-transfer-ratio type="double">1</power-transfer-ratio>
+   <differential-ratio-front type="double">0.4</differential-ratio-front>
+   <differential-ratio-rear type="double">0.6</differential-ratio-rear>
+  </config>
+  <wheels>
+   <wheel n="0">
+    <power-norm type="double">0</power-norm>
+   </wheel>
+   <wheel n="1">
+    <power-norm type="double">0</power-norm>
+   </wheel>
+   <wheel n="2">
+    <power-norm type="double">0</power-norm>
+   </wheel>
+   <wheel n="3">
+    <power-norm type="double">0</power-norm>
+   </wheel>
+  </wheels>
+ </transmission>
+
+</PropertyList>

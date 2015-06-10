@@ -1,0 +1,128 @@
+<airplane mass="6000">
+
+<approach speed="105" aoa="6" fuel="0.8">
+  <control-setting axis="/controls/engines/engine[0]/throttle" value="0.25"/>
+  <control-setting axis="/controls/engines/engine[1]/throttle" value="0.25"/>
+  <control-setting axis="/controls/engines/engine[0]/propeller-pitch" value="0.0"/>
+</approach>
+
+<cruise speed="286" alt="25000" fuel="0.8">
+  <control-setting axis="/controls/engines/engine[0]/throttle" value="1.0"/>
+  <control-setting axis="/controls/engines/engine[1]/throttle" value="1.0"/>
+  <control-setting axis="/controls/engines/engine[0]/propeller-pitch" value="1.0"/>
+</cruise>
+
+<cockpit x="-1.0" y="0.4" z="0.55"/>
+
+<fuselage ax="0.0"  ay="0" az="0.75" bx="-6.0" by="0" bz="1.0" 
+width="1.0" taper="0" midpoint="0.35"/>
+
+
+
+<wing x="-5.8" y="0.0" z="1.0" length="1.68" chord="1.0" camber="0">
+    <stall aoa="16" width="4" peak="1.5"/>
+	<flap0 start="0.001" end="1" lift="0.005" drag="1.9" />
+	<control-input axis="/local/temp/dragbrake" control="FLAP0" invert="true"/>
+</wing>
+<mstab x="-2.0" y="0.237" z="0.61" length="1.8" chord="1.2" >
+</mstab>
+
+<!-- Main Turbine -->
+   <jet x="-1.5" y="0" z="0.7"
+       mass="4000"
+       thrust="1"
+	   afterburner="0"
+                tsfc="100"
+       n1-idle="22" n1-max="100" n2-idle="28" n2-max="100"
+       exhaust-speed="1850"
+	   spool-time="1"
+       rotation="0">
+    <!--actionpt x="-14.914" y="-0.532" z="-0.06"/-->
+    <actionpt x="-14.914" y="-0.532" z="-0.066"/>
+    <control-input axis="/systems/turbine[0]/throttle-demand" control="THROTTLE"/>
+  </jet>
+
+
+<thruster x="-5.2" y="1.2" z="0.3" vx="1" vy="0" vz="0" thrust="1200">
+  <control-input axis="/systems/transmission/wheels/wheel[0]/power-forward-norm" control="THROTTLE"
+  />
+</thruster>
+
+<thruster x="-5.2" y="-1.2" z="0.3" vx="1" vy="0" vz="0" thrust="1200">
+  <control-input axis="/systems/transmission/wheels/wheel[1]/power-forward-norm" control="THROTTLE"
+  />
+</thruster>
+
+<thruster x="-5.2" y="1.2" z="0.3" vx="-1" vy="0" vz="0" thrust="1200">
+  <control-input axis="/systems/transmission/wheels/wheel[0]/power-reverse-norm" control="THROTTLE"
+  />
+</thruster>
+
+<thruster x="-5.2" y="-1.2" z="0.3" vx="-1" vy="0" vz="0" thrust="1200">
+  <control-input axis="/systems/transmission/wheels/wheel[1]/power-reverse-norm" control="THROTTLE"
+  />
+</thruster>
+
+<thruster x="-5.2" y="1.2" z="0.3" vx="1" vy="0" vz="0" thrust="1200">
+  <control-input axis="/systems/transmission/wheels/wheel[2]/power-norm" control="THROTTLE"
+  />
+</thruster>	
+
+<thruster x="-5.2" y="-1.2" z="0.3" vx="1" vy="0" vz="0" thrust="1200">
+  <control-input axis="/systems/transmission/wheels/wheel[3]/power-norm" control="THROTTLE"
+  />
+</thruster>
+
+<tank x="-1.8" y="0" z="-0.9" capacity="372"/>
+
+<gear x="-0.7" y="1.2" z="-1.0" compression="0.35"
+	sfric="1.9" spring="1" >
+<control-input axis="/controls/steering/steering-wheel" control="STEER"  
+ src0="-1.0" src1="1.0"
+ dst0="-0.8" dst1="0.8"/>
+<control-input axis="/controls/gear/brake-right" control="BRAKE"
+  src0="0" src1="1.0"
+  dst0="0" dst1="0.8"
+  />
+  <control-output control="STEER" prop="/surface-positions/rudder-pos-norm" />
+  <control-speed control="STEER" transition-time="1.0"/>
+  <control-speed control="BRAKE" transition-time="0.01"/>
+</gear>
+
+<gear x="-0.7" y="-1.2" z="-1.0" compression="0.35"
+	sfric="1.9" spring="1" >
+<control-input axis="/controls/steering/steering-wheel" control="STEER"  
+ src0="-1.0" src1="1.0"
+ dst0="-0.8" dst1="0.8" />
+ <control-input axis="/controls/gear/brake-left" control="BRAKE"
+  src0="0" src1="1.0"
+  dst0="0" dst1="0.8"
+  />
+  <control-speed control="STEER" transition-time="1.0"/>
+  <control-speed control="BRAKE" transition-time="0.01"/>
+</gear>
+
+<gear x="-5.2" y="1.2" z="-1.0" compression="0.3"
+	sfric="1.9" spring="4" >
+<control-input axis="/controls/gear/brake-right" control="BRAKE"
+  src0="0" src1="1.0"
+  dst0="0" dst1="1.0"
+  />
+  <control-input axis="/controls/gear/brake-left" control="BRAKE"/>
+  <control-input axis="/controls/gear/brake-parking" control="BRAKE"/>
+  <control-speed control="BRAKE" transition-time="0.1"/>
+</gear>
+
+<gear x="-5.2" y="-1.2" z="-1.0" compression="0.3"
+	sfric="1.9" spring="4" >
+<control-input axis="/controls/gear/brake-right" control="BRAKE"
+  src0="0" src1="1.0"
+  dst0="0" dst1="1.0"
+  />
+  <control-input axis="/controls/gear/brake-parking" control="BRAKE"/>
+  <control-speed control="BRAKE" transition-time="0.1"/>
+</gear>
+
+
+
+</airplane>

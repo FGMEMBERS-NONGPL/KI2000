@@ -1,0 +1,75 @@
+
+<PropertyList>
+
+ <path>driving.ac</path>
+ 
+ <text>
+  <name>mph</name>
+  <font>led.txf</font>
+  <character-size type="double">0.019</character-size>
+  <offsets>
+   <pitch-deg>0</pitch-deg>
+   <heading-deg>0</heading-deg>
+   <roll-deg>3</roll-deg>
+   <x-m>2.245</x-m>
+   <y-m>-0.495</y-m>
+   <z-m>0.914</z-m>
+  </offsets>
+  <axis-alignment>yz-plane</axis-alignment>
+  <type type="string">number-value</type>
+  <format type="string">%003.0f</format>
+  <truncate type="bool">true</truncate>
+  <property>velocities/groundspeed-kt</property>
+  <draw-text type="bool">true</draw-text>
+  <alignment>center-center</alignment>
+ </text>
+ 
+  <text>
+  <name>odometer</name>
+  <font>led.txf</font>
+  <character-size type="double">0.010</character-size>
+  <offsets>
+   <pitch-deg>0</pitch-deg>
+   <heading-deg>0</heading-deg>
+   <roll-deg>3</roll-deg>
+   <x-m>2.26</x-m>
+   <y-m>-0.5825</y-m>
+   <z-m>0.906</z-m>
+  </offsets>
+  <axis-alignment>yz-plane</axis-alignment>
+  <type type="string">number-value</type>
+  <format type="string">%0004.0f</format>
+  <property>instrumentation/binnacles/odometer</property>
+  <draw-text type="bool">true</draw-text>
+  <alignment>center-center</alignment>
+ </text>
+ 
+ <animation>
+  <type>material</type>
+  <object-name>binnacle.left.driving</object-name>
+  <emission>
+   <red>1.0</red>
+   <green>1.0</green>
+   <blue>1.0</blue>
+   <factor-prop>/instrumentation/illumination/binnacle-brightness</factor-prop>
+  </emission>
+ </animation>
+ 
+ <animation>
+  <type>material</type>
+  <object-name>mph</object-name>
+  <object-name>odometer</object-name>
+  <diffuse>
+   <red>1.0</red>
+   <green>0</green>
+   <blue>0</blue>
+  </diffuse>
+  <emission>
+   <red>1.0</red>
+   <green>0</green>
+   <blue>0</blue>
+   <factor-prop>/instrumentation/illumination/binnacle-brightness</factor-prop>
+  </emission>
+ </animation>
+
+</PropertyList>

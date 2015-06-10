@@ -1,0 +1,17 @@
+
+<PropertyList>
+
+ <path>comms.ac</path>
+ 
+ <animation>
+  <type>material</type>
+  <object-name>binnacle.left.comms</object-name>
+  <emission>
+   <red>1.0</red>
+   <green>1.0</green>
+   <blue>1.0</blue>
+   <factor-prop>/instrumentation/illumination/binnacle-brightness</factor-prop>
+  </emission>
+ </animation>
+
+</PropertyList>

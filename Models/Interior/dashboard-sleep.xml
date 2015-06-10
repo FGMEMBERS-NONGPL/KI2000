@@ -1,0 +1,42 @@
+
+<PropertyList>
+
+ <path>dashboard-sleep.ac</path>
+ 
+ <effect>
+  <inherits-from>Effects/model-transparent</inherits-from>
+  <object-name>mph</object-name>
+  <object-name>rpm</object-name>
+  <object-name>indicator.power</object-name>
+  <object-name>indicator.fuelon</object-name>
+  <object-name>indicator.minrpm</object-name>
+  <object-name>indicator.ignitors</object-name>
+  <object-name>indicator.normalcruise</object-name>
+  <object-name>indicator.autocruise</object-name>
+  <object-name>indicator.pursuit</object-name>
+  <object-name>indicator.turnleft</object-name>
+  <object-name>indicator.turnright</object-name>
+  <object-name>indicator.beam</object-name>
+  <object-name>indicator.lights</object-name>
+ </effect>
+ 
+ <animation>
+  <object-name>steering.wheel</object-name>
+  <object-name>wheelbadge</object-name>
+  <type>rotate</type>
+  <property>surface-positions/rudder-pos-norm</property>
+  <factor>-250</factor>
+  <offset-deg>0</offset-deg>
+  <center>
+   <x-m>2.4663</x-m>
+   <y-m>-0.3883</y-m>
+   <z-m>0.7820</z-m>
+  </center>
+  <axis>
+   <x>1</x>
+   <y>0</y>
+   <z>0</z>
+  </axis>
+ </animation>
+ 
+</PropertyList>

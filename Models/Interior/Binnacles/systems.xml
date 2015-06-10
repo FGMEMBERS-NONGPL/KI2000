@@ -1,0 +1,90 @@
+
+<PropertyList>
+
+ <path>systems.ac</path>
+ 
+   <animation>
+   <type>texmultiple</type>
+   <object-name>bar.fuel</object-name>
+   <transform>
+     <property>/consumables/fuel/total-fuel-norm</property>
+     <subtype>textranslate</subtype>
+   <factor>0.5</factor>
+   <axis>
+     <x>1</x>
+     <y>0</y>
+   </axis>
+   </transform>
+   <transform>
+     <property>/consumables/fuel/total-fuel-norm</property>
+     <subtype>textranslate</subtype>
+   <factor>1</factor>
+   <axis>
+     <x>0</x>
+     <y>1</y>
+   </axis>
+   </transform>
+  </animation>
+  
+  <animation>
+   <type>texmultiple</type>
+   <object-name>bar.voltsac</object-name>
+   <transform>
+    <property>/systems/electrical/outputs/busbars/high-voltage-bus</property>
+     <subtype>textranslate</subtype>
+   <factor>0.0045</factor>
+   <axis>
+     <x>-1</x>
+     <y>0</y>
+   </axis>
+   </transform>
+   <transform>
+     <property>/systems/electrical/outputs/busbars/high-voltage-bus</property>
+     <subtype>textranslate</subtype>
+   <factor>0.005</factor>
+   <axis>
+     <x>0</x>
+     <y>1</y>
+   </axis>
+   </transform>
+  </animation>
+  
+  <animation>
+   <type>texmultiple</type>
+   <object-name>bar.voltsdc</object-name>
+   <transform>
+    <property>/systems/electrical/outputs/busbars/low-voltage-bus</property>
+     <subtype>textranslate</subtype>
+   <factor>0.04</factor>
+   <axis>
+     <x>-1</x>
+     <y>0</y>
+   </axis>
+   </transform>
+   <transform>
+     <property>/systems/electrical/outputs/busbars/low-voltage-bus</property>
+     <subtype>textranslate</subtype>
+   <factor>0.05</factor>
+   <axis>
+     <x>0</x>
+     <y>1</y>
+   </axis>
+   </transform>
+  </animation>
+ 
+ <animation>
+  <type>material</type>
+  <object-name>binnacle.right.systems</object-name>
+  <object-name>bar.fuel</object-name>
+  <object-name>bar.voltsac</object-name>
+  <object-name>bar.voltsdc</object-name>
+  <object-name>bar.battery</object-name>
+  <emission>
+   <red>1.0</red>
+   <green>1.0</green>
+   <blue>1.0</blue>
+   <factor-prop>/instrumentation/illumination/binnacle-brightness</factor-prop>
+  </emission>
+ </animation>
+
+</PropertyList>

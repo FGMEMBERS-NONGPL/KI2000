@@ -1,0 +1,117 @@
+
+<PropertyList>
+
+ <path>console.ac</path>
+ 
+ <effect>
+  <inherits-from>Effects/model-transparent</inherits-from>
+  <object-name>select.park</object-name>
+  <object-name>select.reverse</object-name>
+  <object-name>select.neutral</object-name>
+  <object-name>select.drive</object-name>
+  <object-name>select.pursuit</object-name>
+ </effect>
+ 
+ <animation>
+  <type>translate</type>
+  <object-name>transmission.selector</object-name>
+  <property>/controls/transmission/selector</property>
+  <interpolation> 
+   <entry><ind>0</ind><dep>0</dep></entry>
+   <entry><ind>0.45</ind><dep>0</dep></entry>
+   <entry><ind>0.65</ind><dep>0.0064</dep></entry>
+   <entry><ind>1</ind><dep>0.0064</dep></entry>
+   <entry><ind>1.3</ind><dep>0.0096</dep></entry>
+   <entry><ind>1.7</ind><dep>0.0144</dep></entry>
+   <entry><ind>2.3</ind><dep>0.0176</dep></entry>
+   <entry><ind>2.7</ind><dep>0.0224</dep></entry>
+   <entry><ind>3.3</ind><dep>0.0256</dep></entry>
+   <entry><ind>3.7</ind><dep>0.0304</dep></entry>
+   <entry><ind>4.0</ind><dep>0.032</dep></entry>
+  </interpolation>
+  <axis>
+   <x>1</x>
+   <y>0</y>
+   <z>0</z>
+  </axis>
+ </animation>
+ 
+  <animation>
+  <object-name>transmission.selector</object-name>
+  <type>rotate</type>
+  <property>/controls/transmission/selector</property>
+  <factor>10</factor>
+  <offset-deg>0</offset-deg>
+  <center>
+   <x-m>2.3619</x-m>
+   <y-m>-0.01997</y-m>
+   <z-m>0.3672</z-m>
+  </center>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+ <animation>
+  <type>pick</type>
+  <object-name>select.park</object-name>
+  <action>
+   <button>0</button>
+   <binding>
+    <command>nasal</command>
+    <script>drivetrain.transmission.select(0)</script>    
+   </binding>
+  </action>
+ </animation>
+ 
+ <animation>
+  <type>pick</type>
+  <object-name>select.reverse</object-name>
+  <action>
+   <button>0</button>
+   <binding>
+    <command>nasal</command>
+    <script>drivetrain.transmission.select(1)</script>    
+   </binding>
+  </action>
+ </animation>
+
+  <animation>
+  <type>pick</type>
+  <object-name>select.neutral</object-name>
+  <action>
+   <button>0</button>
+   <binding>
+    <command>nasal</command>
+    <script>drivetrain.transmission.select(2)</script>    
+   </binding>
+  </action>
+ </animation>
+ 
+ <animation>
+  <type>pick</type>
+  <object-name>select.drive</object-name>
+  <action>
+   <button>0</button>
+   <binding>
+    <command>nasal</command>
+    <script>drivetrain.transmission.select(3)</script>    
+   </binding>
+  </action>
+ </animation>
+ 
+  <animation>
+  <type>pick</type>
+  <object-name>select.pursuit</object-name>
+  <action>
+   <button>0</button>
+   <binding>
+    <command>nasal</command>
+    <script>drivetrain.transmission.select(4)</script>    
+   </binding>
+  </action>
+ </animation>
+ 
+</PropertyList>

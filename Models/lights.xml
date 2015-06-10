@@ -1,0 +1,147 @@
+
+<PropertyList>
+
+ <path>lights.ac</path>
+ 
+  <model>
+  <path>Aircraft/KI2000/Models/headlights.xml</path>
+  <name>headlamps-all</name>
+ </model>
+ 
+ <animation>
+  <object-name>headlamps-all</object-name>
+  <type>rotate</type>
+  <property>sim/multiplay/generic/float[11]</property>
+  <factor>35</factor>
+  <center>
+   <x-m>0.677</x-m>
+   <y-m>0</y-m>
+   <z-m>0.7840</z-m>
+  </center>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+ 
+    <animation>
+    	<type>light</type>
+		<light-type>spot</light-type>
+		<object-name>beam.fog.left</object-name>
+		<nopreview/>
+		<direction><x>-1</x><y>-0.255</y><z>-0.05</z></direction>
+		<position><x> -0.5 </x><y> -0.6116 </y><z> 0.5182 </z></position>
+		<ambient><r>0.5</r><g>0.5</g><b>0.4</b><a>  1.0 </a></ambient>
+        <diffuse><r>  0.7 </r><g>  0.7 </g><b>  0.6 </b><a>  0.9 </a></diffuse>
+        <specular><r>  1.0 </r><g>  1.0 </g><b>  0.9 </b><a>  1.0 </a></specular>
+		<attenuation><c>0.7</c><l>0.7</l><q>0</q></attenuation>
+		<exponent>2.5</exponent>
+		<cutoff>1000</cutoff>
+		<near-m>0.01</near-m>
+		<far-m>300</far-m>
+		 <dim-factor>
+         <property>/systems/headlamps/foglights/brightness-norm</property>
+         <factor>1.0</factor>
+		 <offset>-0.3</offset>
+         <min>0</min>
+         <max>1.0</max>
+		</dim-factor>
+ </animation>
+ 
+     <animation>
+    	<type>light</type>
+		<light-type>spot</light-type>
+		<object-name>beam.fog.right</object-name>
+		<nopreview/>
+		<direction><x>-1</x><y>0.255</y><z>-0.05</z></direction>
+		<position><x> -0.5 </x><y> 0.6116 </y><z> 0.5182 </z></position>
+		<ambient><r>0.5</r><g>0.5</g><b>0.4</b><a>  1.0 </a></ambient>
+        <diffuse><r>  0.7 </r><g>  0.7 </g><b>  0.6 </b><a>  0.9 </a></diffuse>
+        <specular><r>  1.0 </r><g>  1.0 </g><b>  0.9 </b><a>  1.0 </a></specular>
+		<attenuation><c>0.7</c><l>0.7</l><q>0</q></attenuation>
+		<exponent>2.5</exponent>
+		<cutoff>1000</cutoff>
+		<near-m>0.01</near-m>
+		<far-m>300</far-m>
+		 <dim-factor>
+         <property>/systems/headlamps/foglights/brightness-norm</property>
+         <factor>1.0</factor>
+		 <offset>-0.3</offset>
+         <min>0</min>
+         <max>1.0</max>
+		</dim-factor>
+ </animation>
+ 
+ <animation>
+    <type>light</type>
+    <light-type>point</light-type>
+    <object-name>beam.fog.left.nob</object-name>
+	<nopreview/>
+    <position>
+      <x> -1.2 </x>
+      <y> -0.6116 </y>
+      <z> 0.5182 </z>
+    </position>
+    <ambient>
+      <r>  0.5 </r>
+      <g>  0.5 </g>
+      <b>  0.45 </b>
+      <a>  1.0 </a>
+    </ambient>
+    <diffuse>
+      <r>  0.7 </r>
+      <g>  0.7 </g>
+      <b>  0.65 </b>
+      <a>  0.9 </a>
+    </diffuse>
+    <specular>
+      <r>  1.0 </r>
+      <g>  1.0 </g>
+      <b>  0.9 </b>
+      <a>  1.0 </a>
+    </specular>
+     <dim-factor>
+      <property>/systems/headlamps/foglights/brightness-norm</property>
+      <factor>1</factor>
+	  <offset>-0.18</offset>
+      <min>0</min>
+      <max>1.0</max>
+   </dim-factor>
+   <attenuation>
+     <c>1</c>
+     <l>1</l>
+     <q>1</q>
+   </attenuation>
+   <near-m>0.1</near-m>
+   <far-m>10</far-m>
+ </animation>
+ 
+ <animation>
+  <type>material</type>
+  <object-name>foglamp.000</object-name>
+  <object-name>foglamp.001</object-name>
+  <object-name>foglamp.002</object-name>
+  <object-name>foglamp.003</object-name>
+  <object-name>foglamp.004</object-name>
+  <object-name>foglamp.005</object-name>
+  <emission>
+   <red>0.9</red>
+   <green>0.9</green>
+   <blue>0.65</blue>
+   <factor-prop>/systems/headlamps/foglights/brightness-norm</factor-prop>
+  </emission>
+ </animation>
+ 
+  <animation>
+  <type>material</type>
+  <object-name>Taillights</object-name>
+  <emission>
+   <red>1</red>
+   <green>1</green>
+   <blue>1</blue>
+   <factor-prop>/systems/headlamps/foglights/brightness-norm</factor-prop>
+  </emission>
+ </animation>
+
+</PropertyList>

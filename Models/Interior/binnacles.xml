@@ -1,0 +1,97 @@
+
+<PropertyList>
+
+ <model>
+  <name>display-driving</name>
+  <path>Aircraft/KI2000/Models/Interior/Binnacles/driving.xml</path>
+ </model>
+ 
+ <model>
+  <name>display-turbine</name>
+  <path>Aircraft/KI2000/Models/Interior/Binnacles/turbine.xml</path>
+ </model>
+ 
+ <model>
+  <name>display-nav</name>
+  <path>Aircraft/KI2000/Models/Interior/Binnacles/nav.xml</path>
+ </model>
+ 
+ <model>
+  <name>display-systems</name>
+  <path>Aircraft/KI2000/Models/Interior/Binnacles/systems.xml</path>
+ </model>
+ 
+ <model>
+  <name>display-comms</name>
+  <path>Aircraft/KI2000/Models/Interior/Binnacles/comms.xml</path>
+ </model>
+ 
+ <animation>
+  <type>select</type>
+  <object-name>display-driving</object-name>
+  <condition>
+   <not>
+    <property>/instrumentation/binnacles/standby-driving</property>
+   </not>
+  </condition>
+ </animation>
+ 
+ <animation>
+  <type>select</type>
+  <object-name>display-turbine</object-name>
+  <condition>
+   <not>
+    <property>/instrumentation/binnacles/standby-turbine</property>
+   </not>	
+  </condition>
+ </animation>
+ 
+ <animation>
+  <type>select</type>
+  <object-name>display-nav</object-name>
+  <condition>
+   <not>
+    <property>/instrumentation/binnacles/standby-nav</property>
+   </not>
+  </condition>
+ </animation>
+ 
+ <animation>
+  <type>select</type>
+  <object-name>display-systems</object-name>
+  <condition>
+   <not>
+    <property>/instrumentation/binnacles/standby-systems</property>
+   </not>
+  </condition>
+ </animation>
+ 
+  <animation>
+  <type>select</type>
+  <object-name>display-comms</object-name>
+  <condition>
+   <not>
+    <property>/instrumentation/binnacles/standby-comms</property>
+   </not>
+  </condition>
+ </animation>
+ 
+ <effect>
+  <inherits-from>Effects/model-transparent</inherits-from>
+  <object-name>mph</object-name>
+  <object-name>rpm</object-name>
+  <object-name>indicator.power</object-name>
+  <object-name>indicator.fuelon</object-name>
+  <object-name>indicator.minrpm</object-name>
+  <object-name>indicator.ignitors</object-name>
+  <object-name>indicator.normalcruise</object-name>
+  <object-name>indicator.autocruise</object-name>
+  <object-name>indicator.pursuit</object-name>
+  <object-name>indicator.turnleft</object-name>
+  <object-name>indicator.turnright</object-name>
+  <object-name>indicator.beam</object-name>
+  <object-name>indicator.lights</object-name>
+ </effect>
+ 
+
+</PropertyList>

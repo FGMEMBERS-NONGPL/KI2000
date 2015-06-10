@@ -1,0 +1,141 @@
+
+<PropertyList>
+
+ <path>turbine.ac</path>
+ 
+<text>
+  <name>rpm</name>
+  <font>led.txf</font>
+  <character-size type="double">0.019</character-size>
+  <offsets>
+   <pitch-deg>0</pitch-deg>
+   <heading-deg>3</heading-deg>
+   <roll-deg>0</roll-deg>
+   <x-m>2.2090</x-m>
+   <y-m>-0.2325</y-m>
+   <z-m>0.9208</z-m>
+  </offsets>
+  <axis-alignment>yz-plane</axis-alignment>
+  <type type="string">number-value</type>
+  <format type="string">%003.0f</format>
+  <truncate type="bool">true</truncate>
+  <property>/systems/transmission/turbine-power-regulated</property>
+  <draw-text type="bool">true</draw-text>
+  <alignment>center-center</alignment>
+ </text>
+ 
+ <animation>
+   <type>texmultiple</type>
+   <object-name>bar.mainturbinen1</object-name>
+   <transform>
+     <property>/engines/engine[0]/rpm</property>
+     <subtype>textranslate</subtype>
+   <factor>0.0045</factor>
+   <axis>
+     <x>-1</x>
+     <y>0</y>
+   </axis>
+   </transform>
+  </animation>
+  
+  <animation>
+   <type>texmultiple</type>
+   <object-name>bar.oiltemp</object-name>
+   <transform>
+     <property>/engines/engine[0]/oilt-norm</property>
+     <subtype>textranslate</subtype>
+   <factor>0.4</factor>
+   <axis>
+     <x>-1</x>
+     <y>0</y>
+   </axis>
+   </transform>
+   <transform>
+     <property>/engines/engine[0]/oilt-norm</property>
+     <subtype>textranslate</subtype>
+   <factor>0.75</factor>
+   <axis>
+     <x>0</x>
+     <y>-1</y>
+   </axis>
+   </transform>
+  </animation>
+  
+  <animation>
+   <type>texmultiple</type>
+   <object-name>bar.egt</object-name>
+   <transform>
+     <property>/engines/engine[0]/egt-degf</property>
+     <subtype>textranslate</subtype>
+   <factor>0.00035</factor>
+   <axis>
+     <x>-1</x>
+     <y>0</y>
+   </axis>
+   </transform>
+   <transform>
+     <property>/engines/engine[0]/egt-degf</property>
+     <subtype>textranslate</subtype>
+   <factor>0.00065</factor>
+   <axis>
+     <x>0</x>
+     <y>-1</y>
+   </axis>
+   </transform>
+  </animation>
+  
+  <animation>
+   <type>texmultiple</type>
+   <object-name>bar.oilpsi</object-name>
+   <transform>
+     <property>/engines/engine[0]/oilp-norm</property>
+     <subtype>textranslate</subtype>
+   <factor>0.4</factor>
+   <axis>
+     <x>-1</x>
+     <y>0</y>
+   </axis>
+   </transform>
+   <transform>
+     <property>/engines/engine[0]/oilp-norm</property>
+     <subtype>textranslate</subtype>
+   <factor>0.75</factor>
+   <axis>
+     <x>0</x>
+     <y>-1</y>
+   </axis>
+   </transform>
+  </animation>
+  
+ <animation>
+  <type>material</type>
+  <object-name>binnacle.right.turbine</object-name>
+  <object-name>bar.mainturbinen1</object-name>
+  <object-name>bar.oiltemp</object-name>
+  <object-name>bar.egt</object-name>
+  <object-name>bar.oilpsi</object-name>
+  <emission>
+   <red>1.0</red>
+   <green>1.0</green>
+   <blue>1.0</blue>
+   <factor-prop>/instrumentation/illumination/binnacle-brightness</factor-prop>
+  </emission>
+ </animation>
+ 
+ <animation>
+  <type>material</type>
+  <object-name>rpm</object-name>
+  <diffuse>
+   <red>1.0</red>
+   <green>0</green>
+   <blue>0</blue>
+  </diffuse>
+  <emission>
+   <red>1.0</red>
+   <green>0</green>
+   <blue>0</blue>
+   <factor-prop>/instrumentation/illumination/binnacle-brightness</factor-prop>
+  </emission>
+ </animation>
+
+</PropertyList>

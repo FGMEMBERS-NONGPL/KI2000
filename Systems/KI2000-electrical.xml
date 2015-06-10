@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PropertyList>
+
+ <electrical>
+
+  <path></path> <!-- Important: clearing the path disables the default Flightgear system -->
+
+  <!-- Suppliers -->
+
+  <component>
+    <kind type="string">alternator</kind>
+    <name type="string">Main Turbine</name>
+    <volts type="float">110</volts>
+    <prop type="string">/systems/electrical/suppliers/turbine[0]</prop>
+	<frequency type="float">60</frequency>
+	<freq-prop type="string">/systems/electrical/suppliers/alternator-frequency[0]</freq-prop>
+    <source-prop type="string">/engines/engine[0]/rpm</source-prop>
+    <source-min type="float">20</source-min>
+  </component>
+  
+  <component>
+    <kind type="string">battery</kind>
+    <name type="string">Battery</name>
+    <volts type="float">12</volts>
+    <prop type="string">/systems/electrical/suppliers/battery</prop>
+  </component>
+  
+  <component>
+    <kind type="string">battery</kind>
+    <name type="string">Sleep Battery</name>
+    <volts type="float">12</volts>
+    <prop type="string">/systems/electrical/suppliers/sleep-battery</prop>
+  </component>
+  
+  <!-- Main Supply Busses -->
+  
+  <component>
+    <kind type="string">output</kind>
+    <name type="string">High Voltage Bus</name>
+	<prop type="string">/systems/electrical/outputs/busbars/high-voltage-bus</prop>
+  </component>
+  
+  <component>
+    <kind type="string">output</kind>
+    <name type="string">Low Voltage Bus</name>
+	<prop type="string">/systems/electrical/outputs/busbars/low-voltage-bus</prop>
+  </component>
+  
+  <component>
+    <kind type="string">output</kind>
+    <name type="string">Sleep Bus</name>
+	<prop type="string">/systems/electrical/outputs/busbars/sleep-bus</prop>
+  </component>
+  
+  <component>
+    <kind type="string">output</kind>
+    <name type="string">External Lights Bus</name>
+	<prop type="string">/systems/electrical/outputs/busbars/external-lights-bus</prop>
+  </component>
+  
+  <component>
+    <kind type="string">output</kind>
+    <name type="string">CPU</name>
+	<prop type="string">/systems/electrical/outputs/high-voltage/CPU</prop>
+  </component>
+  
+  <component>
+    <kind type="string">output</kind>
+    <name type="string">Alpha Circuit</name>
+	<prop type="string">/systems/electrical/outputs/high-voltage/alpha-circuit</prop>
+  </component>
+  
+  <component>
+    <kind type="string">output</kind>
+    <name type="string">Turbine Starter</name>
+	<prop type="string">/systems/electrical/outputs/low-voltage/turbine-starter</prop>
+  </component>
+  
+  <component>
+    <kind type="string">output</kind>
+    <name type="string">Anamorphic Equalizer</name>
+	<prop type="string">/systems/electrical/outputs/low-voltage/anamorphic-equalizer</prop>
+  </component>
+  
+  <component>
+    <kind type="string">output</kind>
+    <name type="string">Dashboard</name>
+	<prop type="string">/systems/electrical/outputs/low-voltage/dashboard</prop>
+  </component>
+  
+  <component>
+    <kind type="string">output</kind>
+    <name type="string">Binnacles</name>
+	<prop type="string">/systems/electrical/outputs/low-voltage/binnacles</prop>
+  </component>
+  
+  <component>
+    <kind type="string">output</kind>
+    <name type="string">Indicators</name>
+	<prop type="string">/systems/electrical/outputs/low-voltage/indicators</prop>
+  </component>
+  
+  <component>
+    <kind type="string">output</kind>
+    <name type="string">Lit Buttons</name>
+	<prop type="string">/systems/electrical/outputs/low-voltage/lit-buttons</prop>
+  </component>
+  
+  <component>
+    <kind type="string">output</kind>
+    <name type="string">Interior Lights</name>
+	<prop type="string">/systems/electrical/outputs/low-voltage/interior-lights</prop>
+  </component>
+  
+  <component>
+    <kind type="string">output</kind>
+    <name type="string">Headlights</name>
+	<prop type="string">/systems/electrical/outputs/low-voltage/external-lights/headlights</prop>
+  </component>
+  
+  <component>
+    <kind type="string">output</kind>
+    <name type="string">Foglights</name>
+	<prop type="string">/systems/electrical/outputs/low-voltage/external-lights/foglights</prop>
+  </component>
+  
+  <component>
+    <kind type="string">output</kind>
+    <name type="string">Turn Signals</name>
+	<prop type="string">/systems/electrical/outputs/low-voltage/external-lights/turn-signals</prop>
+  </component>
+  
+  <component>
+    <kind type="string">output</kind>
+    <name type="string">Taillights</name>
+	<prop type="string">/systems/electrical/outputs/low-voltage/external-lights/tail-lights</prop>
+  </component>
+  
+  <component>
+    <kind type="string">output</kind>
+    <name type="string">Reverse Lights</name>
+	<prop type="string">/systems/electrical/outputs/low-voltage/external-lights/reverse-lights</prop>
+  </component>
+  
+  <component>
+    <kind type="string">output</kind>
+    <name type="string">License Plate Light</name>
+	<prop type="string">/systems/electrical/outputs/low-voltage/external-lights/license-plate-light</prop>
+  </component>
+  
+  <!-- ### Connectors ### -->
+  
+  <connector>
+    <input type="string">Main Turbine</input>
+    <output type="string">High Voltage Bus</output>
+    <switch type="string">/systems/electrical/circuit-breakers/turbine-alternator</switch>
+  </connector>
+  
+  <connector> <!-- Starboard Transformer/Rectifier Unit -->
+    <input type="string">High Voltage Bus</input>
+    <output type="string">Low Voltage Bus</output>
+    <switch type="string">/systems/electrical/circuit-breakers/transformer</switch>
+	<variable type="string">switch-volts</variable>
+	<scale type="double">0.115</scale>
+  </connector>
+  
+  <connector>
+    <input type="string">Battery</input>
+    <output type="string">Low Voltage Bus</output>
+    <switch type="string">/systems/electrical/circuit-breakers/battery</switch>
+  </connector>
+  
+  <connector>
+    <input type="string">Sleep Battery</input>
+    <output type="string">Sleep Bus</output>
+  </connector>
+  
+  <connector> <!-- Tidy! -->
+    <input type="string">Low Voltage Bus</input>
+    <output type="string">External Lights Bus</output>
+    <switch type="string">/systems/electrical/relays/lights/external-lights-master</switch>
+  </connector>
+  
+  <connector> <!-- Tidy! -->
+    <input type="string">External Lights Bus</input>
+    <output type="string">Headlights</output>
+    <switch type="string">/systems/electrical/relays/lights/headlights</switch>
+  </connector>
+  
+  <connector> <!-- Tidy! -->
+    <input type="string">External Lights Bus</input>
+    <output type="string">Foglights</output>
+    <switch type="string">/systems/electrical/relays/lights/foglights</switch>
+  </connector>
+  
+  <connector> <!-- Tidy! -->
+    <input type="string">External Lights Bus</input>
+    <output type="string">Indicators</output>
+    <switch type="string">/systems/electrical/relays/lights/foglights</switch>
+  </connector>
+  
+  <connector> <!-- Tidy! -->
+    <input type="string">External Lights Bus</input>
+    <output type="string">Taillights</output>
+    <switch type="string">/systems/electrical/relays/lights/tail-lights</switch>
+  </connector>
+  
+  <connector> <!-- Tidy! -->
+    <input type="string">External Lights Bus</input>
+    <output type="string">Reverse Lights</output>
+    <switch type="string">/systems/electrical/relays/lights/reverse-lights</switch>
+  </connector>
+  
+  <connector>
+    <input type="string">External Lights Bus</input>
+    <output type="string">License Plate Light</output>
+    <switch type="string">/systems/electrical/relays/lights/license-plate-light</switch>
+  </connector>
+  
+  <connector>
+    <input type="string">Low Voltage Bus</input>
+    <output type="string">Interior Lights</output>
+  </connector>
+  
+  <connector>
+    <input type="string">Low Voltage Bus</input>
+    <output type="string">Dashboard</output>
+  </connector>
+  
+  <connector>
+    <input type="string">Dashboard</input>
+    <output type="string">Binnacles</output>
+	<switch type="string">/systems/electrical/relays/binnacles</switch>
+  </connector>
+  
+  <connector>
+    <input type="string">Dashboard</input>
+    <output type="string">Indicators</output>
+	<switch type="string">/systems/electrical/relays/indicators</switch>
+  </connector>
+  
+  <connector>
+    <input type="string">Dashboard</input>
+    <output type="string">Lit Buttons</output>
+	<switch type="string">/systems/electrical/relays/lit-buttons</switch>
+  </connector>
+  
+ </electrical>
+  
+</PropertyList>

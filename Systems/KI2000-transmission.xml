@@ -1,0 +1,321 @@
+
+<PropertyList>
+
+ <filter>
+  <name>Power Demand</name>
+  <debug>false</debug>
+  <type>gain</type>
+  <input>
+   <property>controls/engines/engine[0]/throttle</property>
+  </input>
+  <output>
+   <property>systems/transmission/power-demand</property>
+  </output>
+  <gain>0.98</gain>
+ </filter>
+ 
+ <filter>
+  <name>Power Transfer</name>
+  <debug>false</debug>
+  <type>gain</type>
+  <input>
+   <property>engines/engine[0]/rpm</property>
+  </input>
+  <output>
+   <property>systems/transmission/turbine-power-in</property>
+  </output>
+  <gain>
+   <property>systems/transmission/config/power-transfer-ratio</property>
+  </gain>
+ </filter>
+ 
+ <filter>
+  <name>Power Regulator</name>
+  <debug>false</debug>
+  <type>gain</type>
+  <input>
+   <property>systems/transmission/turbine-power-in</property>
+  </input>
+  <output>
+   <property>systems/transmission/turbine-power-regulated</property>
+  </output>
+  <gain>
+   <property>systems/transmission/power-demand</property>
+  </gain>
+ </filter>
+ 
+ <filter>
+  <name>Gearbox</name>
+  <debug>false</debug>
+  <type>gain</type>
+  <input>
+   <property>systems/transmission/turbine-power-regulated</property>
+  </input>
+  <output>
+   <property>systems/transmission/turbine-power-geared</property>
+  </output>
+  <gain>
+   <property>systems/transmission/gear-ratio</property>
+  </gain>
+ </filter>
+ 
+ <filter>
+  <name>Directional</name>
+  <debug>false</debug>
+  <type>gain</type>
+  <input>
+   <property>systems/transmission/turbine-power-geared</property>
+  </input>
+  <output>
+   <property>systems/transmission/power-regulated-directional</property>
+  </output>
+  <gain>
+   <condition>
+    <greater-than>
+	 <property>systems/transmission/selected</property>
+	 <value>2</value>
+	</greater-than>
+   </condition>
+   <value>1</value>
+  </gain>
+  <gain>
+   <condition>
+    <equals>
+	 <property>systems/transmission/selected</property>
+	 <value>2</value>
+	</equals>
+   </condition>
+   <value>0</value>
+  </gain>
+  <gain>
+   <condition>
+    <equals>
+	 <property>systems/transmission/selected</property>
+	 <value>1</value>
+	</equals>
+   </condition>
+   <value>-1</value>
+  </gain>
+  <gain>
+   <condition>
+    <equals>
+	 <property>systems/transmission/selected</property>
+	 <value>0</value>
+	</equals>
+   </condition>
+   <value>0</value>
+  </gain>
+ </filter>
+ 
+ <filter>
+  <name>All Wheel Drive Differential: Front Wheels</name>
+  <debug>false</debug>
+  <type>gain</type>
+  <input>
+   <property>systems/transmission/power-regulated-directional</property>
+  </input>
+  <output>
+   <property>systems/transmission/power-to-front-differential</property>
+  </output>
+  <gain>
+   <property>systems/transmission/config/differential-ratio-front</property>
+  </gain>
+ </filter>
+ 
+ <filter>
+  <name>All Wheel Drive Differential: Rear Wheels</name>
+  <debug>false</debug>
+  <type>gain</type>
+  <input>
+   <property>systems/transmission/power-regulated-directional</property>
+  </input>
+  <output>
+   <property>systems/transmission/power-to-rear-differential</property>
+  </output>
+  <gain>
+   <property>systems/transmission/config/differential-ratio-rear</property>
+  </gain>
+ </filter>
+ 
+ <filter>
+  <name>Front Differential: Nearside Front Wheel Power</name>
+  <debug>false</debug>
+  <type>gain</type>
+  <input>
+   <property>systems/transmission/power-regulated-directional</property>
+  </input>
+  <output>
+   <property>systems/transmission/wheels/wheel[0]/power-norm</property>
+  </output>
+  <gain>
+   <property>systems/transmission/config/differential-ratio-rear</property>
+  </gain>
+ </filter>
+ 
+ <filter>
+  <name>Front Differential: Nearside Front Wheel Forwards</name>
+  <debug>false</debug>
+  <type>gain</type>
+  <input>
+   <property>systems/transmission/wheels/wheel[0]/power-norm</property>
+  </input>
+  <output>
+   <property>systems/transmission/wheels/wheel[0]/power-forward-norm</property>
+  </output>
+  <gain>0.02</gain>
+  <u_min>0</u_min>
+  <u_max>1.0</u_max>
+ </filter>
+ 
+ <filter>
+  <name>Front Differential: Nearside Front Wheel Reverse</name>
+  <debug>false</debug>
+  <type>gain</type>
+  <input>
+   <property>systems/transmission/wheels/wheel[0]/power-norm</property>
+   <scale>-1</scale>
+  </input>
+  <output>
+   <property>systems/transmission/wheels/wheel[0]/power-reverse-norm</property>
+  </output>
+  <gain>0.02</gain>
+ </filter>
+ 
+ <filter>
+  <name>Front Differential: Offside Front Wheel Power</name>
+  <debug>false</debug>
+  <type>gain</type>
+  <input>
+   <property>systems/transmission/power-regulated-directional</property>
+  </input>
+  <output>
+   <property>systems/transmission/wheels/wheel[1]/power-norm</property>
+  </output>
+  <gain>
+   <property>systems/transmission/config/differential-ratio-rear</property>
+  </gain>
+ </filter>
+ 
+ <filter>
+  <name>Front Differential: Offside Front Wheel Forwards</name>
+  <debug>false</debug>
+  <type>gain</type>
+  <input>
+   <property>systems/transmission/wheels/wheel[1]/power-norm</property>
+  </input>
+  <output>
+   <property>systems/transmission/wheels/wheel[1]/power-forward-norm</property>
+  </output>
+  <gain>0.02</gain>
+  <u_min>0</u_min>
+  <u_max>1.0</u_max>
+ </filter>
+ 
+ <filter>
+  <name>Front Differential: Offside Front Reverse</name>
+  <debug>false</debug>
+  <type>gain</type>
+  <input>
+   <property>systems/transmission/wheels/wheel[1]/power-norm</property>
+   <scale>-1</scale>
+  </input>
+  <output>
+   <property>systems/transmission/wheels/wheel[1]/power-reverse-norm</property>
+  </output>
+  <gain>0.02</gain>
+ </filter>
+ 
+ <filter>
+  <name>Front Differential: Nearside Rear Wheel Power</name>
+  <debug>false</debug>
+  <type>gain</type>
+  <input>
+   <property>systems/transmission/power-regulated-directional</property>
+  </input>
+  <output>
+   <property>systems/transmission/wheels/wheel[2]/power-norm</property>
+  </output>
+  <gain>
+   <property>systems/transmission/config/differential-ratio-rear</property>
+  </gain>
+ </filter>
+ 
+ <filter>
+  <name>Rear Differential: Nearside Rear Wheel Forward</name>
+  <debug>false</debug>
+  <type>gain</type>
+  <input>
+   <property>systems/transmission/wheels/wheel[2]/power-norm</property>
+  </input>
+  <output>
+   <property>systems/transmission/wheels/wheel[2]/power-forward-norm</property>
+  </output>
+  <u_min>0</u_min>
+  <u_max>1.0</u_max>
+  <gain>0.02</gain>
+ </filter>
+ 
+ <filter>
+  <name>Rear Differential: Nearside Rear Wheel Reverse</name>
+  <debug>false</debug>
+  <type>gain</type>
+  <input>
+   <property>systems/transmission/wheels/wheel[2]/power-norm</property>
+   <scale>-1</scale>
+  </input>
+  <output>
+   <property>systems/transmission/wheels/wheel[2]/power-reverse-norm</property>
+  </output>
+  <gain>0.02</gain>
+
+ </filter>
+ 
+ <filter>
+  <name>Front Differential: Offside Rear Wheel Power</name>
+  <debug>false</debug>
+  <type>gain</type>
+  <input>
+   <property>systems/transmission/power-regulated-directional</property>
+  </input>
+  <output>
+   <property>systems/transmission/wheels/wheel[3]/power-norm</property>
+  </output>
+  <gain>
+   <property>systems/transmission/config/differential-ratio-rear</property>
+  </gain>
+ </filter>
+ 
+ <filter>
+  <name>Rear Differential: Offside Rear Wheel Forward</name>
+  <debug>false</debug>
+  <type>gain</type>
+  <input>
+   <property>systems/transmission/wheels/wheel[3]/power-norm</property>
+  </input>
+  <output>
+   <property>systems/transmission/wheels/wheel[3]/power-forward-norm</property>
+  </output>
+  <gain>0.02</gain>
+  <u_min>0</u_min>
+  <u_max>1.0</u_max>
+ </filter>
+ 
+ <filter>
+  <name>Rear Differential: Offside Rear Wheel Reverse</name>
+  <debug>false</debug>
+  <type>gain</type>
+  <input>
+   <property>systems/transmission/wheels/wheel[3]/power-norm</property>
+   <scale>-1</scale>
+  </input>
+  <output>
+   <property>systems/transmission/wheels/wheel[3]/power-reverse-norm</property>
+  </output>
+  <gain>0.02</gain>
+
+ </filter>
+
+ 
+ 
+
+</PropertyList>

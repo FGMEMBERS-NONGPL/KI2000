@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PropertyList> 
+
+	<sim>
+
+  	 <description>Knight Industries 2000</description>
+  	 <author>Algernon</author>
+  	 <aircraft-version>0.3</aircraft-version>
+	 <status>Alpha</status>
+     <rating>
+      <FDM type="int">2</FDM>
+      <systems type="int">1</systems>
+      <cockpit type="int">2</cockpit>
+      <model type="int">3</model>
+     </rating>
+	 
+	<startup>
+      <splash-texture>Aircraft/KI2000/splash.png</splash-texture>
+    </startup>
+  
+  	 <flight-model>yasim</flight-model>
+  	 <aero>KI2000-yasim</aero>
+  	 
+	 <fuel-fraction>0.99</fuel-fraction>
+	 
+	 <model>
+      <path>Aircraft/KI2000/Models/KI2000.xml</path>
+     </model>
+	 
+	 <multiplay>
+	  <generic>
+	   <float n="0" alias="/gear/gear[0]/rollspeed-ms" /> <!-- NSF Wheel Roll -->
+	   <float n="1" alias="/gear/gear[1]/rollspeed-ms" /> <!-- NSF Wheel Roll -->
+	   <float n="2" alias="/gear/gear[2]/rollspeed-ms" /> <!-- NSF Wheel Roll -->
+	   <float n="3" alias="/gear/gear[3]/rollspeed-ms" /> <!-- NSF Wheel Roll -->
+	   <float n="4" alias="/systems/doors/door-left/position-norm" /> <!-- Driver Door -->
+	   <float n="5" alias="/systems/doors/door-right/position-norm" /> <!-- Passenger Door -->
+	   <float n="6" alias="/systems/glass/window-left/position-norm" /> <!-- Driver Window -->
+	   <float n="7" alias="/systems/glass/window-right/position-norm" /> <!-- Passenger Window -->
+	   <float n="8" alias="/systems/glass/roof-left/position-norm" /> <!-- Driver Roof -->
+	   <float n="9" alias="/systems/glass/roof-right/position-norm" /> <!-- Passenger Roof -->
+	   <float n="10" alias="/systems/glass/opacity" /> <!-- Window Tint -->
+	   <float n="11" alias="/systems/headlamps/position-norm" /> <!-- Window Tint -->
+	   <int n="0" alias="/systems/anamorphic-eq/elements/element-lit" /> <!-- Passenger Roof -->
+	  </generic>
+	 </multiplay>
+	 
+	 <sound>
+	  <path>Aircraft/KI2000/Sounds/KI2000-sound.xml</path>
+	  <levels>
+	   <anamorphic-eq type="double">0.5</anamorphic-eq>
+	  </levels>
+	 </sound>
+	 
+	 <systems include="Systems/KI2000-electrical.xml" >
+	  <autopilot>
+	   <path>Aircraft/KI2000/Systems/KI2000-transmission.xml</path>
+	  </autopilot>
+	 </systems>
+	 
+	 
+   <view n="0">
+   <internal archive="y">true</internal>
+   <config>
+	<x-offset-m archive="y" type="double">-0.375</x-offset-m>
+    <y-offset-m archive="y" type="double">0.225</y-offset-m>
+    <z-offset-m archive="y" type="double">3.1</z-offset-m>
+	<pitch-offset-deg>-5.22</pitch-offset-deg>
+	<default-field-of-view-deg>63.231</default-field-of-view-deg>
+   </config>
+  </view>
+  
+   <view n="1">
+   <config>
+	<x-offset-m archive="y" type="double">-0.375</x-offset-m>
+    <y-offset-m archive="y" type="double">0.1</y-offset-m>
+    <z-offset-m archive="y" type="double">-10</z-offset-m>
+   </config>
+  </view>
+  
+  <help>
+      <title>Knight Industries 2000</title>
+      <line></line>
+      <line>You might need these, buddy</line>
+      <key>
+        <name>w</name>
+        <desc>Toggle Driver's Window</desc>
+      </key>
+      <key>
+        <name>W</name>
+        <desc>Toggle Passengers Window</desc>
+      </key>
+      <key>
+        <name>r</name>
+        <desc>Toggle Driver's Roof</desc>
+      </key>
+      <key>
+        <name>g</name>
+        <desc>Toggle Privacy Glass</desc>
+      </key>
+	  <key>
+        <name>s</name>
+        <desc>Surveillance Mode</desc>
+      </key>
+	  <key>
+        <name>[</name>
+        <desc>Shift Transmission Lever Forward</desc>
+      </key>
+	  <key>
+        <name>]</name>
+        <desc>Shift Transmission Lever Backward</desc>
+      </key>
+
+    </help>
+	
+	</sim>
+
+	<instrumentation>
+	 <binnacles>
+	  <standby-comms type="bool">true</standby-comms>
+	  <standby-nav type="bool">true</standby-nav>
+	  <standby-driving type="bool">true</standby-driving>
+	  <standby-turbine type="bool">true</standby-turbine>
+	  <standby-systems type="bool">true</standby-systems>
+	  <odometer type="int">0</odometer>
+	 </binnacles>
+	 <illumination>
+	  <binnacle-brightness type="double">0.8</binnacle-brightness>
+	  <indicators-brightness type="double">0.9</indicators-brightness>
+	  <red-floods type="double">0.7</red-floods>
+	 </illumination>
+	 <indicators>
+	  <test-mode type="bool">false</test-mode>
+	 </indicators>
+	</instrumentation>
+	
+	<systems include="Systems/KI2000-systems.xml">
+	 <glass>
+	  <opacity type="double">0</opacity>
+	 </glass>
+	 <headlamps>
+	  <position-norm type="double">0</position-norm>
+	  <brightness-norm type="double">0</brightness-norm>
+	  <foglights>
+	   <brightness-norm type="double">0.99</brightness-norm>
+	  </foglights>
+	 </headlamps>
+	 <transmission>
+	  <selected type="int">0</selected>
+	 </transmission>
+	 <turbine>
+	  <throttle-demand type="double">0</throttle-demand>
+	 </turbine>
+	</systems>
+	
+	<controls>
+	 <steering>
+	  <steering-wheel alias="/controls/flight/aileron" />
+	 </steering>
+	 <transmission>
+	  <selector type="double">0</selector>
+	 </transmission>
+	</controls>
+	
+	<input>
+	 <keyboard include="Input/KI2000-keyboard.xml" />
+     <joysticks>
+      <js n="0" include="Input/X45-Typhoon.xml" />
+     </joysticks>	  
+	</input>
+	
+	<!-- Temp -->
+	<local>
+	 <temp>
+	  <dragbrake type="double">0</dragbrake>
+	 </temp>
+	</local>
+	
+	<nasal>
+	
+	 <KI2000>
+	  <file>Aircraft/KI2000/Nasal/KI2000.nas</file>
+	 </KI2000>
+	 
+	 <ae>
+	  <file>Aircraft/KI2000/Nasal/ae.nas</file>
+	 </ae>
+	 
+	 <alpha>
+	  <file>Aircraft/KI2000/Nasal/alpha.nas</file>
+	 </alpha>
+	 
+	 <electrical>
+	  <file>Aircraft/KI2000/Nasal/Electrical.nas</file>
+	 </electrical>
+	 
+	 <drivetrain>
+	  <file>Aircraft/KI2000/Nasal/drivetrain.nas</file>
+	 </drivetrain>
+	 
+	 <engine>
+	  <file>Aircraft/KI2000/Nasal/generic-yasim-engine.nas</file>
+	  <script></script>
+	 </engine>
+	 
+	 <instruments>
+	  <file>Aircraft/KI2000/Nasal/instruments.nas</file>
+	 </instruments>
+	 
+	 <turbine>
+	  <file>Aircraft/KI2000/Nasal/turbine.nas</file>
+	 </turbine>
+	 
+	</nasal>
+  
+</PropertyList>

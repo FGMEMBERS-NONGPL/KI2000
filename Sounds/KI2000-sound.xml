@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- * Knight Industries 2000 Sound Suite *
+       By Algernon Aerospace	   
+-->
+
+<PropertyList>
+
+ <fx>
+ 
+  <apu-run>
+  <name>Anamorphic EQ Scanner</name>
+  <mode>once</mode>
+  <path>anamorphic-eq.wav</path>
+  <condition>
+   <property>/sim/sound/triggers/anamorphic-eq</property>
+  </condition>
+   <position>
+    <x>0.41</x>
+	<y>0</y>
+	<z>0.7</z>
+   </position>
+   <orientation>
+	<x>1</x>
+    <y>0</y>
+    <z>0</z>
+    <inner-angle>120.0</inner-angle>
+    <outer-angle>270.0</outer-angle>
+    <outer-gain>0.35</outer-gain>
+   </orientation>
+   <volume>
+    <property>/sim/sound/levels/anamorphic-eq</property>
+    <factor>1</factor>
+    <offset>0</offset>
+    <min>0.0</min>
+	<max>1.0</max>
+   </volume>
+   <pitch>
+    <property>/systems/anamorphic-eq/scan-speed</property>
+    <factor>3</factor>
+    <min>0.5</min>
+    <max>2.0</max>
+    <offset>0</offset>
+   </pitch>
+   <reference-dist>5</reference-dist>
+   <max-dist>300</max-dist>
+  </apu-run>
+  
+ <turbine>
+  <name>Turbine</name>
+  <mode>looped</mode>
+  <path>turbine1.wav</path>
+  <delay-sec>0</delay-sec>
+   <position>
+    <x>1.5</x>
+	<y>0</y>
+	<z>0.75</z>
+   </position>
+   <orientation>
+	<x>0.5</x>
+    <y>0.5</y>
+    <z>0.5</z>
+    <inner-angle>120.0</inner-angle>
+    <outer-angle>270.0</outer-angle>
+    <outer-gain>0.35</outer-gain>
+   </orientation>
+   <reference-dist>5</reference-dist>
+   <max-dist>900</max-dist>
+   <pitch>
+    <property>engines/engine[0]/rpm</property>
+	<factor>0.008</factor>
+	<offset>1.05</offset>
+	<min>-0.25</min>
+   </pitch>
+   <volume>
+    <property>engines/engine[0]/rpm</property>
+    <factor>0.008</factor>
+	<offset>-0.05</offset>
+	<min>0.0</min>
+	<max>1</max>
+   </volume>
+  </turbine>
+ </fx>
+ 
+</PropertyList>

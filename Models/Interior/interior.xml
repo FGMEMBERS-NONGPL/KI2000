@@ -1,0 +1,19 @@
+
+<PropertyList>
+
+ <path>interior.ac</path>
+ 
+ <model>
+  <path>Aircraft/KI2000/Models/Interior/console.xml</path>
+ </model>
+ 
+ <model>
+  <path>Aircraft/KI2000/Models/Interior/interior-lights.xml</path>
+ </model>
+ 
+ <model>
+  <path>Aircraft/KI2000/Models/Interior/dashboard.xml</path>
+  <name>dashboard</name>
+ </model>
+ 
+</PropertyList>

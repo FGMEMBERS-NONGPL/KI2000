@@ -1,0 +1,106 @@
+
+<PropertyList>
+
+ <key n="125">
+  <name>}</name>
+  <desc>Autostart</desc>
+  <binding> 
+   <command>nasal</command>
+   <script>
+   settimer( func { instruments.initialize(); },1);
+   settimer( func { engine.mainturbine.autostart(); },4);
+   </script>
+  </binding>
+ </key>
+ 
+ <key n="123">
+  <name>{</name>
+  <desc>Autostop</desc>
+  <binding> 
+   <command>nasal</command>
+   <script>engine.mainturbine.autostart();</script>
+  </binding>
+ </key>
+
+ <key n="91">
+  <name>[</name>
+  <desc>Shift Gear Lever Forwards</desc>
+  <binding> 
+   <command>nasal</command>
+   <script>drivetrain.transmission.shift(-1);</script>
+  </binding>
+ </key>
+ 
+  <key n="93">
+  <name>]</name>
+  <desc>Shift Gear Lever Backwards</desc>
+  <binding> 
+   <command>nasal</command>
+   <script>drivetrain.transmission.shift(1);</script>
+  </binding>
+ </key>
+
+ <key n="119">
+  <name>c</name>
+  <desc>Toggle Driver Window</desc>
+  <binding> 
+   <command>nasal</command>
+   <script>KI2000.leftWindow.toggle();</script>
+  </binding>
+ </key>
+ 
+ <key n="87">
+  <name>C</name>
+  <desc>Toggle Passenger Window</desc>
+  <binding> 
+   <command>nasal</command>
+   <script>KI2000.rightWindow.toggle();</script>
+  </binding>
+ </key>
+ 
+ <key n="114">
+  <name>r</name>
+  <desc>Toggle Driver Roof</desc>
+  <binding> 
+   <command>nasal</command>
+   <script>KI2000.leftRoof.toggle();</script>
+  </binding>
+ </key>
+ 
+ <key n="82">
+  <name>R</name>
+  <desc>Toggle Passenger Window</desc>
+  <binding> 
+   <command>nasal</command>
+   <script>KI2000.rightRoof.toggle();</script>
+  </binding>
+ </key>
+ 
+  <key n="115">
+  <name>s</name>
+  <desc>Toggle Surveillance Mode</desc>
+  <binding> 
+   <command>property-toggle</command>
+   <property>/systems/anamorphic-eq/surveillance-mode</property>
+  </binding>
+ </key>
+ 
+ <key n="72">
+  <name>h</name>
+  <desc>Headlamps</desc>
+  <binding> 
+   <command>nasal</command>
+   <script>KI2000.headlamps.toggle();</script>
+  </binding>
+ </key>
+ 
+ <key n="103">
+  <name>g</name>
+  <desc>Headlamps</desc>
+  <binding> 
+   <command>nasal</command>
+   <script>KI2000.glass();</script>
+  </binding>
+ </key>
+
+</PropertyList>
